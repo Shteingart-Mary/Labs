@@ -1,0 +1,267 @@
+<html>
+<head>
+
+<title>
+SQL
+</title>
+
+<link rel="stylesheet" href="normalize.css">
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 class="title-header">Язык программирования SQL</h1>
+
+<p><img src="Прог.png" alt="Иллюстрация"
+	width="32%" height="32%" class="left img"></p>
+
+<nav class="container ">
+<a href="#SQL"><br>Что такое SQL?</a><br>
+<a href="#Ist"><br>История создания</a><br>
+<a href="#El"><br>Элементы языка</a><br>
+<a href="#Subd">Система управления базами данных</a><br>
+<a href="#Obz"><br>Краткий обзор языка</a><br>
+<a href="#PC"><br>Преимущества и недостатки</a><br>
+<a href="#Cod"><br>Примеры кода</a><br>
+<a href="#List">Список использованных тегов и CSS-свойств</a><br>
+</nav>
+
+
+<a name="SQL"></a>
+<br><br>
+<h2>Что такое SQL?</h2>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;
+<mark><b>SQL</b> (от англ. Structured Query Language — «язык структурированных запросов») — декларативный язык программирования, применяемый для создания, модификации и управления данными в реляционной базе данных, управляемой соответствующей системой управления базами данных.
+</mark><br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Является, прежде всего, информационно-логическим языком, предназначенным для описания, изменения и извлечения данных, хранимых в реляционных базах данных. В общем случае SQL (без ряда современных расширений) считается языком программирования неполным по Тьюрингу, но вместе с тем стандарт языка спецификацией SQL/PSM предусматривает возможность его процедурных расширений.
+<br>
+<p class="textline">Изначально SQL был основным способом работы пользователя с базой данных и позволял выполнять следующий набор операций:
+<ol>
+<li>Создание в базе данных новой таблицы;</li>
+<li>Добавление в таблицу новых записей;</li>
+<li>Изменение записей;</li>
+<li>Удаление записей;</li>
+<li>Выборка записей из одной или нескольких таблиц (в соответствии с заданным условием);</li>
+<li>Изменение структур таблиц.</li>
+</ol>
+
+<a name="Ist"></a>
+<h2>История создания</h2>
+
+
+<p><table>
+<tr>
+<td width="33%">&nbsp;&nbsp;&nbsp;&nbsp;
+	<mark><b>Дональд Чемберлин</b> и <b>Раймонд Бойс</b></mark> начали работу над языком реляционных баз данных после того, как узнали о реляционной модели от Э. Кодда, встретившись с ним на симпозиуме в Нью-Йорке в 1972 году.Авторы были впечатлены выразительностью и компактностью реляционной алгебры и реляционного исчисления, предложенных Э. Коддом, для представления сложных запросов. Кодд использовал символическую запись с математическими обозначениями операций, но Чемберлин и Бойс захотели спроектировать язык так, чтобы им мог воспользоваться ЛЮБОЙ ПОЛЬЗОВАТЕЛЬ, даже не имеющий навыков программирования и знаний математики. После симпозиума Кодда, Чемберлин и Бойс провели следующий год в экспериментах над <ins>дизайном языка</ins>. Первой их попыткой был язык SQUARE (Specifying Queries in A Relational Environment), но он был сложен в
+</td>
+<td width="34%">
+<p><img src="Созд.jpg" alt="Иллюстрация"
+width="90%" height="90%" class="left img"></p>
+</td>
+<td width="33%">
+практическом использовании из-за математической нотации с <sup>верхними</sup> и <sub>нижними</sub> индексами.<br> &nbsp;&nbsp;&nbsp;&nbsp;
+В 1973 году, Чемберлин и Бойс начали работу над совершенно новым языком, который был назван SEQUEL (от Structured English QUEry Language, «английский язык структурированных запросов»). Авторы надеялись, что после небольшой практики даже пользователи-неспециалисты (например, бухгалтеры, инженеры,
+архитекторы, градостроители) смогут читать запросы так, словно последние написаны на обычном английском языке. Язык был назван <ins>«декларативным»</ins>, поскольку он описывал <b>желаемый результат, а не детальный план поиска этой информации</b>. Предполагалось, что переводом декларативного запроса в детальный план исполнения будет заниматься специальный оптимизирующий компилятор.</td>
+</tr>
+</table>
+</p>
+<p>
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+Первая общедоступная статья о SEQUEL была опубликована в 1974 году. Через месяц после этого Рей Бойс скончался. После его смерти язык SEQUEL продолжил развитие как часть проекта IBM System R. Пэт Селинджер (Pat Selinger) занималась разработкой стоимостного оптимизатора (cost-based optimizer), Рэймонд Лори (Raymond Lorie) занимался компилятором запросов.
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+В 1977 году авторы получили письмо от юриста британской авиастроительной группы компаний <i>Hawker Siddeley</i>, уведомляющее, что этой компании принадлежит торговая марка «SEQUEL». Было принято решение сократить название языка до SQL (от Structured Query Language, «язык структурированных запросов»). Тем не менее, первоначальное название SEQUEL повлияло на современное произношение аббревиатуры SQL.
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+SQL был не единственным языком подобного назначения. В Калифорнийском Университете Беркли была разработана некоммерческая СУБД Ingres, которая являлась реляционной СУБД, но использовала свой собственный язык QUEL, который, не выдержал конкуренции по количеству поддерживающих его СУБД по сравнению с языком SQL. В качестве альтернативного подхода для обеспечения пользовательского доступа к базам данных также рассматривался появившийся в 1970-е годы метод QBE, впоследствии в видоизменённой форме появившийся в ряде интегрированных сред управления данными, но так и не заменивший, а лишь дополнивший SQL.
+</p>
+<p><a href="https://sql-ex.ru/blogs/?/PJat_faktov_o_baze_dannyh_Model_v_SQL_Server.html" target="_blank" >Пять фактов о базе данных Model в SQL Server</a></p>
+
+
+<a name="El"></a>
+<h2>Элементы языка</h2>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;
+Язык SQL представляет собой совокупность операторов, инструкций, вычисляемых функций.Согласно общепринятому стилю программирования, операторы (и другие зарезервированные слова) в SQL обычно рекомендуется писать прописными буквами.
+</p>
+<p class="textline">Операторы SQL делятся на:</p>
+<ul>
+<li>Операторы определения данных (Data Definition Language, DDL):</li>
+<ul>
+<li>CREATE создаёт объект базы данных (саму базу, таблицу, представление, пользователя и так далее),</li>
+<li>ALTER изменяет объект,</li>
+<li>DROP удаляет объект;</li>
+</ul>
+<li>Операторы манипуляции данными (Data Manipulation Language, DML):</li>
+<ul>
+<li>SELECT выбирает данные, удовлетворяющие заданным условиям,</li>
+<li>INSERT добавляет новые данные,</li>
+<li>UPDATE изменяет существующие данные,</li>
+<li>DELETE удаляет данные;</li>
+</ul>
+<li>Операторы определения доступа к данным (Data Control Language, DCL):</li>
+<ul>
+<li>GRANT предоставляет пользователю (группе) разрешения на определённые операции с объектом,</li>
+<li>REVOKE отзывает ранее выданные разрешения,</li>
+<li>DENY задаёт запрет, имеющий приоритет над разрешением;</li>
+</ul>
+<li>Операторы управления транзакциями (Transaction Control Language, TCL):</li>
+<ul>
+<li>COMMIT применяет транзакцию,</li>
+<li>ROLLBACK откатывает все изменения, сделанные в контексте текущей транзакции,</li>
+<li>SAVEPOINT делит транзакцию на более мелкие участки.</li>
+</ul>
+</ul>
+</p>
+
+<a name="Subd"></a>
+<h2>Система управления базами данных</h2>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Чтобы работать с базами данных при помощи SQL, используют систему управления базами данных, 
+или СУБД — посредник между пользователем и сервером, где находятся таблицы. СУБД представляют собой комплекс ПО, которое позволяет 
+создавать базы данных и управлять ими. СУБД бывают бесплатными и коммерческими — например, MySQL, Microsoft SQL Server, SQLite, Oracle, Ingres.</p>
+
+<div><table align="center" class="t">
+	<caption class="star">Список платных и бесплатных СУБД и компаний, которые их используют</caption>
+	<thead>
+	  <tr>
+		<th></th>
+		<th>Система</th>
+		<th>Типа доступа</th>
+		<th>Написание на языке</th>
+		<th>Где используется</th>
+	  </tr>
+	</thead>
+
+	<tbody>
+	  <tr>
+		<th>1</th>
+		<td>PostgreSQL</td>    <td>Открытый</td>    <td>C</td>    <td>Skype, TripAdvisor, Яндекс, Почта, яAvito</td>
+	</tr>
+
+	  <tr>
+		<th>2</th>
+		<td>My SQL</td>    <td>Открытый</td>    <td>C; C++</td>    <td>GitHub, FaceBook, Twitter, YouTube</td>
+	</tr>
+
+	  <tr>
+		<th>3</th>
+		<td>SQLite</td>    <td>Открытый</td>    <td>C</td>    <td>Adobe Photoshop Lightroom, Mozilla Firefox, Opera, Viber</td>
+	</tr>
+
+	  <tr>
+		<th>4</th>
+		<td>Oracle</td>    <td>Платный</td>    <td>C; C++; Java</td>    <td>МТС, Tele2,Банк "Открытие", ВТБ</td>
+	</tr>
+
+	  <tr>
+		<th>5</th>
+		<td>Google Cloud Spanner</td>    <td>Общедоступный</td>    <td>C; C++</td>    <td>PayPal, P&G, Lucille Games</td>
+	</tr>
+	 </tbody>
+  </table>
+</div>
+
+<a name="Obz"></a>
+<h2>Краткий обзор языка</h2>
+<p class="text-with-shadow"><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SQL также поддерживает операции соединения таблиц, которые позволяют объединять данные из нескольких таблиц в один результат. SQL также поддерживает агрегатные функции, такие как SUM, AVG, MAX, MIN, которые позволяют вычислять статистические данные на основе выбранных данных.
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+SQL имеет стандарт ANSI SQL, который определяет общие правила и синтаксис языка. Однако, многие базы данных имеют свои собственные диалекты SQL, которые могут отличаться от стандарта ANSI SQL.
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+SQL также может быть использован для
+создания и управления пользователями и их правами доступа к базе данных. Это позволяет ограничить доступ к конфиденциальным данным и обеспечить безопасность базы данных.
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+В целом, SQL является мощным инструментом для управления и обработки данных в реляционных базах данных. Его простота и широкое распространение делают его важным языком программирования для любого, кто работает с базами данных.</i></p>
+
+<a name="PC"></a>
+<h2>Преимущества и недостатки</h2>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp; <b class="textline">Преимущества:</b>
+<ul class="img-gal">
+	<li>Независимость от конкретной СУБД</li>
+	<li>Наличие стандартов</li>
+	<li>Декларативность</li>
+</ul>
+</p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp; <b class="textline">Недостатки:</b>
+<ul class="img-x">
+	<li>Несоответствие реляционной модели данных</li>
+	<li>Сложность</li>
+	<li>Отступления от стандартов</li>
+	<li>Сложность работы с иерархическими структурами</li>
+</ul>
+</p>
+
+<a name="Cod"></a>
+<h2>Примеры кода</h2>
+
+<p><img src="Результат.png" alt="Иллюстрация"
+width="40%" height="40%" class="right img"></p>
+
+
+<p>
+<span class="colortext2"> —Создание таблицы Goods </span>
+<br><span class="colortext"> CREATE TABLE </span> Goods (
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ProductId <span class="colortext"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INT IDENTITY </span> (1,1) <span class="colortext3">NOT NULL</span> <span class="colortext"> CONSTRAINT</span> PK_ProductId <span class="colortext"> PRIMARY KEY</span>,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Category <span class="colortext"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INT </span> <span class="colortext3">NOT NULL</span>,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ProductName <span class="colortext">&nbsp;&nbsp; VARCHAR </span>(100) <span class="colortext3">NOT NULL</span>,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Price <span class="colortext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MONEY </span> <span class="colortext3">NULL</span>,
+<br> );
+<br> <span class="colortext"> GO </span>
+<br>
+
+
+
+<br> <span class="colortext2"> —Создание таблицы Categories </span>
+<br> <span class="colortext"> CREATE TABLE </span> Categories (
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CategoryId <span class="colortext"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INT IDENTITY </span>(1,1) <span class="colortext3">NOT NULL</span> CONSTRAINT PK_CategoryId <span class="colortext"> PRIMARY KEY</span>,
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CategoryName <span class="colortext"> &nbsp;VARCHAR </span> (100) <span class="colortext3">NOT NULL</span>
+<br> );
+<br>
+
+
+
+<br> <span class="colortext2"> —Добавление строк в таблицу Categories </span>
+<br> <span class="colortext"> INSERT INTO </span> Categories(CategoryName)
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="colortext"> VALUES </span> (<span class="colortext4"> 'Комплектующие ПК' </span>),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<span class="colortext4"> 'Мобильные устройства' </span>);
+<br> <span class="colortext"> GO </span>
+<br>
+
+
+
+<br> <span class="colortext2"> —Добавление строк в таблицу Goods </span>
+<br> <span class="colortext"> INSERT INTO </span> Goods(Category, ProductName, Price)
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="colortext"> VALUES </span> (1, <span class="colortext4"> 'Системный блок' </span>, 300),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (1, <span class="colortext4"> 'Монитор' </span>, 200),
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2, <span class="colortext4"> 'Смартфон' </span>, 250);
+<br>
+<span class="colortext"> GO </span>
+<br>
+
+
+
+<br> <span class="colortext2"> —Выборка данных </span>
+<br> <span class="colortext"> SELECT </span> * <span class="colortext"> FROM </span> Goods;
+<br> <span class="colortext"> SELECT </span> * <span class="colortext"> FROM </span> Categories;
+</p>
+<br>
+
+
+<hr>
+<a name="List"></a>	
+<h3>Список использованных тегов и CSS-свойств</h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<a href="List1.html">Список использованных тегов</a></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<a href="List2.html">Список использованных CSS-свойств</a></p>
+
+
+</body>
+</html>

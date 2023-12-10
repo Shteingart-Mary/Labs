@@ -1,0 +1,33 @@
+﻿
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>Калькулятор</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+	<div class="body">         
+        <div class="answer">
+            <div class="process" id="process"></div>      
+            <div class="result" type id="result"></div> 
+        </div>        
+        <div class="press">
+            <button onclick="C()" class="erase">C</button>
+            <button onclick="CE()" class="erase">CE</button>
+            <button onclick="del()" class="erase">←</button>
+            <button onclick="number(',')" class="number">,</button>     
+            <button onclick="equal(operation)" class="operation">=</button>
+            
+            <div class="numbers" id="numbers"></div>    
+            
+            <button onclick="operator('Y')" class="operation" id="*">×</button>
+            <button onclick="operator('D')" class="operation" id="/">÷</button>
+            <button onclick="operator('S')" class="operation" id="+">+</button>
+            <button onclick="operator('V')" class="operation" id="-">-</button>
+            <button onclick="perc('P')" class="operation">%</button>           
+        </div>
+    </div>
+    <script src="calculator.js"></script>
+</body>
+</html>
