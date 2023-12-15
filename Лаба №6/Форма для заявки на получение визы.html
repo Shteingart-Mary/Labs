@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="forms.css">
+    <title>Заявка на получение визы</title>
+</head>
+<body>
+    <h1>ПОЛУЧЕНИЕ ВИЗЫ ОНЛАЙН</h1>
+    <form name="visa" method="POST">
+        <div id="result" class="divv"></div>
+        <fieldset>
+            <legend>Ваши персональные данные<span class="red">*</span></legend>
+            <div>
+                <label for="document" class="inp">Копия паспорта<span class="red">*</span></label>
+                <div>
+                    <input name="file" type="file" class="inp" placeholder="Копия паспорта*" required> 
+                </div>
+            </div>
+    
+            <div>
+                <input id="surname" class="inp" type="text" placeholder="Фамилия*" required> 
+                <label for="surname" class="inp-l">Фамилия<span class="red">*</span></label>
+            </div>
+    
+            <div>
+                <input id="name" class="inp" type="text" placeholder="Имя*" required> 
+                <label for="name" class="inp-l">Имя<span class="red">*</span></label> 
+            </div>
+    
+            <div>
+                <label for="secondname" class="inp">Если нет отчества, пропустить пункт</label>
+                <br><input id="secondname" class="inp" type="text" placeholder="Отчество"> 
+                <label for="secondname" class="inp-l">Отчество</label>
+            </div>
+
+            <div>
+                <input id="age" type="number"  min=0 class="inp" placeholder="Ваш возраст*" required> 
+                <label for="age" class="inp-l">Ваш возраст<span class="red">*</span></label>
+            </div>
+
+            <div> 
+                <label for="gender" class="inp">Ваш пол<span class="red">*</span></label>
+                <div>
+                    <input id="gender" class="inp cursor" type="radio" name=" " required value="Женский"> Женский
+                </div>
+                <div>
+                    <input id="gender" class="inp cursor" type="radio" name=" " required value="Мужской"> Мужской
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Дополнительные данные</legend>
+        <div>
+            <input id="name" class="inp" type="text" placeholder="Ваш адрес проживания"> 
+            <label for="name" class="inp-l">Ваш адрес проживания</label>
+        </div>    
+
+        <div>
+            <input id="name" class="inp" type="text" placeholder="Страна для получения визы"> 
+            <label for="name" class="inp-l">Страна для получения визы</label>
+        </div>
+
+        <div>
+            <input name="email" type="email" id="name" class="inp" type="text" placeholder="Адрес электронной почты"> 
+            <label for="name" class="inp-l">Адрес электронной почты</label>
+        </div>
+
+        <div>
+            <input name="number" type="tel" value="+7" minlength="12" maxlength="12" class="inp" placeholder="Номер телефона"> 
+            <label for="name" class="inp-l">Номер телефона</label>
+        </div>
+
+        <div>
+            <select class="cursor">
+            <option value="">Виза для животных</option>
+            <option>У меня нет животных</option>
+            <option>Мне нужна виза для животных</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="name" class="inp">Дата и время регистрации</label>
+            <div>  
+                <input class="cursor" id="name" class="inp" type="datetime-local" name="date_time">
+            </div>
+        </div>
+
+        <div>
+            <textarea rows="5" cols="20" placeholder="Сообщение"></textarea>
+        </div>
+        </fieldset>
+        <div>
+            <input class="cursor" type="checkbox" id="check1" required>
+            <label for="check1">Я даю согласие на обработку моих персональных данных<span class="red">*</span></label>         
+        </div>
+        <div>
+            <input class="cursor" type="checkbox" id="check2" required>
+            <label for="check2" >Я не робот<span class="red">*</span></label>         
+        </div>
+        <div>
+            <button id="send" class="cursor" type="submit">
+                <img src="plane.png" style="vertical-align: middle"> Отправить 
+            </button>
+            <input class="cursor" type="reset" value="Очистить">
+        </div>    
+    </form>  
+    
+    <script src="script.js"></script>
+</body>
+</html>
