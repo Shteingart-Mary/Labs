@@ -6,18 +6,8 @@ for (let i = 0; i <= 9; i++) {
     numbers.innerHTML += `<button class="number" onclick="number(${i})">${i}</button>`;
 }
 function number(num) {
-    if ( res == '') {
-    }
-    else {
-        CE();
-        res = '';
-    }
     result.innerHTML += num;
     process.innerHTML += num;
-}
-function CE(){
-    result.innerHTML = '';
-    process.innerHTML = '';
 }
 function C(){
     result.innerHTML = ''; 
@@ -26,12 +16,16 @@ function C(){
     operation = ''; 
     process.innerHTML = '';
 }
-function perc() {
-    result.innerHTML = parseFloat(result.innerHTML)/100;
-}
 function del() {
     result.innerHTML = result.innerHTML.slice(0, -1);
     process.innerHTML = process.innerHTML.slice(0, -1);
+}
+function CE(){
+    result.innerHTML = '';
+    process.innerHTML = '';
+}
+function perc() {
+    result.innerHTML = parseFloat(result.innerHTML)/100;
 }
 function operator(resultat) {
     num1 = result.innerHTML;
