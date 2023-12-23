@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Вариант 11</title>
+    <style>
+      body{
+        background: rgba(0, 251, 255, 0.15);
+      }
+      .zad{
+        text-align: center;
+        font-size: 30px;
+      }
+      .rech{
+        text-align: center;
+        font-size: 30px;
+        color: rgb(0, 229, 255);
+      }
+      
+      .glow-on-hover {
+          width: 10%;
+          height: 10%;
+          border: none;
+          outline: none;
+          color: #0400ff;
+          background: #111;
+          cursor: pointer;
+          position: relative;
+          z-index: 0;
+          border-radius: 10px;
+      }
+
+      .glow-on-hover:before {
+          content: '';
+          background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+          position: absolute;
+          top: -2px;
+          left:-2px;
+          background-size: 400%;
+          z-index: -1;
+          filter: blur(5px);
+          width: calc(100% + 4px);
+          height: calc(100% + 4px);
+          animation: glowing 20s linear infinite;
+          opacity: 0;
+          transition: opacity .3s ease-in-out;
+          border-radius: 10px;
+      }
+
+      .glow-on-hover:active {
+          color: #ffffff
+      }
+
+      .glow-on-hover:active:after {
+          background: transparent;
+      }
+
+      .glow-on-hover:hover:before {
+          opacity: 1;
+      }
+
+      .glow-on-hover:after {
+          z-index: -1;
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: #00d5ff;
+          left: 0;
+          top: 0;
+          border-radius: 10px;
+      }
+
+      @keyframes glowing {
+          0% { background-position: 0 0; }
+          50% { background-position: 400% 0; }
+          100% { background-position: 0 0; }
+      }
+    </style>
+</head>
+<body>
+    <p class="zad"> Даны 2 слова. Проверить, состоят ли они из одних и тех же букв с учетом повторений и без учета регистра</з>
+    <input type="text" id="word1" placeholder="Слово 1">
+    <input type="text" id="word2" placeholder="Слово 2">
+    <button class="glow-on-hover" onclick="checkSame()">ПрОвЕрИтЬ</button>
+    <p id="result" class="rech"></p>
+
+    <script>
+      function checkSameLetters(word1, word2) {
+        word1 = word1.toLowerCase();
+        word2 = word2.toLowerCase();
+        console.log(word1, word2)
+        let dict1 = {};
+        let dict2 = {};
+        
+
+        //проверка на длинное слово
+        if (word1.length <= word2.length)
+        {
+          //dict1 хранит короткое слово
+          for (let letter of word1) {
+            dict1[letter] = (dict1[letter] || 0) + 1;
+          }
+          console.log(dict1)
+
+          //dict2 хранит длинное слово
+          for (let letter of word2) {
+            dict2[letter] = (dict2[letter] || 0) + 1;
+          }
+          console.log(dict2)
+        }
+        else {
+          //dict2 хранит длиинное слово
+          for (let letter of word1) {
+            dict2[letter] = (dict2[letter] || 0) + 1;
+          }
+          console.log(dict1)
+
+          //dict1 хранит короткое слово
+          for (let letter of word2) {
+            dict1[letter] = (dict1[letter] || 0) + 1;
+          }
+          console.log(dict2)
+        }
+
+        //создадим счетчик совпадений
+        var counter = 0;
+        //пройдемся по короткому словарю
+          for (var letter in dict1){
+            //если в длинном словаре есть буква коротко словаря то
+            if (letter in dict2){
+              //увеличим счетчик совпадений
+              counter++;
+            }
+          }
+          //если длина совпадений равна количеству символов длинного слова
+          if (counter == Object.keys(dict2).length){
+            return true
+          }
+          //иначе false
+          return false
+      }
+      
+
+      function checkSame() {
+        let word1 = document.getElementById('word1').value;
+        let word2 = document.getElementById('word2').value;
+        let result = checkSameLetters(word1, word2);
+        document.getElementById('result').innerText = result ? "True" : "False";
+      }
+    </script>
+</body>
+</html>

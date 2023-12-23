@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Вариант 11</title>
+    <style>
+        body{
+            background: rgba(255, 217, 0, 0.342);
+        }
+        .zad{
+            text-align: center;
+            font-size: 30px;
+        }
+        .rech{
+            text-align: center;
+            font-size: 40px;
+            color: rgb(255, 187, 0);
+        }
+    </style>   
+</head>
+<body>
+    <h1 class="zad">Вычислите в массиве, не используя методов объекта Array: произведение элементов массива между первым
+        и последним элементами, удовлетворяющими условию: модуль разности этого числа и числа π не превосходит 10<sup>-5</sup>
+    </h1>
+    <p class="rech">
+        <script>
+            let massive = [10, 0.1569995, 5, 1, 2, 2, 10];
+            let a = 1.0;
+            for (let i = 1; i < massive.length-1; i++){
+                a = a * massive[i];
+                console.log(a);
+            }
+            
+            let b = 3.14 - a;
+            console.log(b.toFixed(6));
+
+            document.write('Исходный массив:', massive);
+            document.write('<br><br>')
+            document.write('Полученный массив:', b.toFixed(6));
+
+           
+        </script>
+    </p>
+
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Вариант 11</title>
+    <style>
+        body{
+            background: rgba(136, 255, 0, 0.15);
+        }
+        .zad{
+            text-align: center;
+            font-size: 30px;
+        }
+        .rech{
+            text-align: center;
+            font-size: 40px;
+            color: rgb(89, 255, 0);
+        }
+    </style>
+</head>
+<body>
+    <p class="zad">Вычислить: (1+2)*(1+2+3)*...*(1+2+...+50)</p>
+    <p class="rech">
+        <script>
+            function calculate() {
+                let result = 1;
+                let sum = 0;
+                for (let i=1; i<=50; i++) {
+                    sum+=i;
+                    result *= sum;
+                }
+                return result;
+            }
+            console.log(calculate())
+            document.write(calculate())
+        </script>
+    </p>
+</body>
+</html>

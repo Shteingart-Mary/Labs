@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Вариант 11</title>
+    <style>
+        body{
+            background: rgba(128, 0, 255, 0.342);
+        }
+        .zad{
+            text-align: center;
+            font-size: 30px;
+        }
+        .rech{
+            text-align: center;
+            font-size: 40px;
+            color: rgb(106, 0, 255);
+        }
+    </style>  
+</head>
+<body>
+    <h1 class="zad">Используя методы объекта Array, удалите из массива все элементы, 
+        модуль целой части которых — это число, у которого сумма цифр чётных
+        разрядов, равна сумме цифр нечётных разрядов
+    </h1>
+    <p class="rech">
+        <script>
+        let massive = [11, 375643, 1320, 729, 8910, 7029, 671, 2461, 5555, 13579, 88, 8024, 3455];
+        let newmassive = massive.filter(num => {
+            let strNum = Math.abs(num).toString();
+            let evenSum = 0;
+            let oddSum = 0;
+            strNum.split('').forEach((digit, index) => {
+                if (index % 2 === 0) {
+                evenSum += parseInt(digit);
+                } 
+                else {
+                oddSum += parseInt(digit);
+                }
+            });
+            return (strNum.length % 2 === 0 && evenSum !== oddSum) || (strNum.length % 2 !== 0 && Math.abs(evenSum - oddSum) > 1);
+        });
+
+        console.log('Исходный массив:', massive);
+        console.log('Полученный массив:', newmassive);
+
+    document.write('Исходный массив:', massive);
+    document.write('<br><br>')
+    document.write('Полученный массив:', newmassive);
+
+    </script>
+        
+    </p>
+    
+</body>
+</html>
