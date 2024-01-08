@@ -1,0 +1,13 @@
+﻿td{
+    border: 1px solid rgb(72, 0, 255, 0.395);
+    padding: 20px;
+    margin: 20px;
+}
+table{
+    background-color: rgba(72, 0, 255, 0.121);
+}
+body{
+    display: flex;
+    justify-content: center;
+    color: rgba(72, 0, 255, 0.707);
+}
